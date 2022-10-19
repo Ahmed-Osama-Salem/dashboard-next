@@ -1,5 +1,7 @@
 import { Meta } from '@/layouts/Meta';
+import { Dashboard } from '@/templates/Dashboard';
 import { Main } from '@/templates/Main';
+import UsersTabel from '@/ui/component/users/UsersTable';
 
 const Index = () => {
   return (
@@ -12,7 +14,9 @@ const Index = () => {
       }
     >
       <div>
-        <h1>Suiiz Tech Team</h1>
+        <Dashboard>
+          <UsersTabel />
+        </Dashboard>
       </div>
     </Main>
   );
