@@ -11,7 +11,7 @@ const FooterAdmin = () => {
               {/* ©<script>document.write(new Date().getFullYear() + ",");</script> */}
               Made with{' '}
               <BsFillHeartFill className="inline-block text-red-500" /> by
-              <p>MR-SuiizTech</p>
+              <p>Eng/ Ahmed-Osama-Salem</p>
               for a better web.
             </div>
           </div>

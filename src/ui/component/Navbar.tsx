@@ -6,6 +6,8 @@ import { AiOutlineMenu, AiOutlineUser } from 'react-icons/ai';
 import { setIsOpen } from '@/app/redux/store/slice/sidebarSlice';
 import { useDispatch, useSelector } from '@/app/redux/store/store';
 
+import ToogleBtn from './toggleBtn/ToggleBtn';
+
 const Navbar = () => {
   const cookies = getCookie('Token');
   const router = useRouter();
@@ -22,17 +24,20 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   return (
-    <nav className="relative mx-6 flex flex-wrap items-center justify-between rounded-2xl  px-0 py-2 shadow-none transition-all lg:flex-nowrap lg:justify-start">
+    <nav className="relative mx-6 flex flex-wrap items-center justify-between rounded-2xl bg-white px-0 py-2  shadow-lg  shadow-red-600/20 transition-all dark:bg-light-gray lg:flex-nowrap lg:justify-start">
       <div className="mx-auto flex w-full flex-wrap items-center justify-between px-4 py-1">
         <nav>
           <ol className="mr-12 flex flex-wrap rounded-lg bg-transparent pt-1 sm:mr-16">
             <li className="text-sm leading-normal">
-              <a className="text-slate-700 opacity-50" href="#">
-                Pages
+              <a
+                className="text-2xl font-bold tracking-[0.06rem] text-red-700"
+                href="#"
+              >
+                EL-FiT Group system
               </a>
             </li>
             <li
-              className="pl-2 text-sm capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']"
+              className="pl-2  text-2xl capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']"
               aria-current="page"
             >
               {router.pathname.split('/')[1]}
@@ -44,7 +49,8 @@ const Navbar = () => {
         </nav>
 
         <div className="mt-2 flex grow items-center sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
-          <div className="flex items-center md:ml-auto md:pr-4">
+          <div className="flex items-center gap-4 md:ml-auto md:pr-4">
+            <ToogleBtn />
             <div className=" relative flex w-full flex-wrap items-stretch rounded-lg transition-all">
               <input
                 type="text"

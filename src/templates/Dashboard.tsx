@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 
 import FooterAdmin from '@/ui/component/FooterAdmin';
 import Navbar from '@/ui/component/Navbar';
-import Sidebar from '@/ui/component/Sidebar';
 
 type IDashboardProps = {
   meta?: ReactNode;
@@ -11,15 +10,18 @@ type IDashboardProps = {
 
 const Dashboard = (props: IDashboardProps) => (
   <div
-    style={{ background: 'rgb(248 249 250' }}
-    className="w-full  px-1 text-gray-700 antialiased"
+    // style={{ background: 'rgb(248 249 250' }}
+    className="h-auto w-full px-1 text-gray-700 antialiased dark:bg-dark-gray"
   >
     {props.meta}
 
-    <Sidebar />
-    <div className="bg-blueGray-100 xl:ml-72">
-      <Navbar />
-      <div className=" w-full md:px-10">
+    {/* <Sidebar /> */}
+    <div className="bg-white dark:bg-dark-gray ">
+      <div className="fixed top-0 z-50 w-full">
+        <Navbar />
+      </div>
+
+      <div className=" mt-14 h-auto w-full md:px-10">
         {props.children}
         <FooterAdmin />
       </div>

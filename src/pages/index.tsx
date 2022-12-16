@@ -1,9 +1,12 @@
+import type { ITableApiData } from '@/app/interface/tableApiData';
+import { getTableData } from '@/app/server/read/getTabledata';
 import { Meta } from '@/layouts/Meta';
 import { Dashboard } from '@/templates/Dashboard';
 import { Main } from '@/templates/Main';
+import TableConstract from '@/ui/component/Table/TableConstract';
 import UsersTabel from '@/ui/component/users/UsersTable';
 
-const Index = () => {
+const Index = ({ data }: { data: ITableApiData[] }) => {
   return (
     <Main
       meta={
@@ -16,6 +19,7 @@ const Index = () => {
       <div>
         <Dashboard>
           <UsersTabel />
+          <TableConstract tabelBody={data} />
         </Dashboard>
       </div>
     </Main>
@@ -23,3 +27,11 @@ const Index = () => {
 };
 
 export default Index;
+
+export async function getServerSideProps() {
+  const data = await getTableData();
+
+  return {
+    props: { data },
+  };
+}
